@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  
+  /* Enhanced Vedic-inspired color palette */
+  --saffron: #FF9933;
+  --deep-red: #8B0000;
+  --gold: #FFD700;
+  --earth-brown: #8B4513;
+  --sage-green: #9DC183;
+  --lotus-pink: #FFB6C1;
+  --indigo: #4B0082;
+  --turmeric: #DAA520;
+  --marigold: #FFA500;
+  --crimson: #DC143C;
+  --forest: #228B22;
+  --amethyst: #9966CC;
+  --sand: #F4A460;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Vedic-inspired styles */
+.vedic-border {
+  border: 1px solid rgba(255, 153, 51, 0.3);
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.1);
+  transition: all 0.5s ease;
+}
+
+.vedic-border:hover {
+  border-color: rgba(255, 153, 51, 0.5);
+  box-shadow: 0 0 15px rgba(255, 153, 51, 0.2);
+}
+
+.vedic-gradient {
+  background: linear-gradient(135deg, var(--saffron), var(--deep-red), var(--sage-green));
+  transition: all 0.5s ease;
+}
+
+.vedic-gradient:hover {
+  background: linear-gradient(135deg, var(--marigold), var(--crimson), var(--forest));
+}
+
+.vedic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF9933' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: patternFloat 30s linear infinite;
+}
+
+@keyframes patternFloat {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.vedic-title {
+  font-family: var(--font-playfair), serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.05em;
+  transition: all 0.5s ease;
+}
+
+.vedic-title:hover {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.vedic-hindi {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.vedic-hindi:hover {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  transform: translateY(-3px);
+}
+
+.vedic-hindi::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.vedic-hindi:hover::after {
+  transform: scaleX(1);
+}
+
+.vedic-button {
+  background: rgba(255, 153, 51, 0.1);
+  border: 1px solid rgba(255, 153, 51, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vedic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 153, 51, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.vedic-button:hover::before {
+  left: 100%;
+}
+
+.vedic-button:hover {
+  background: rgba(255, 153, 51, 0.2);
+  border: 1px solid rgba(255, 153, 51, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.vedic-settings {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 153, 51, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vedic-settings:hover {
+  border-color: rgba(255, 153, 51, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.vedic-select {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 153, 51, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.vedic-select:focus {
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 2px rgba(255, 153, 51, 0.2);
+  transform: translateY(-1px);
+}
+
+.vedic-slider {
+  -webkit-appearance: none;
+  height: 6px;
+  background: rgba(255, 153, 51, 0.2);
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.vedic-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--saffron);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vedic-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.5);
+}
+
+.vedic-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--saffron);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vedic-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.5);
+}
+
+/* Decorative elements */
+.vedic-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--saffron), var(--deep-red), var(--sage-green), transparent);
+  margin: 1rem 0;
+  border-radius: 1px;
+  transition: all 0.5s ease;
+}
+
+.vedic-divider:hover {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--marigold), var(--crimson), var(--forest), transparent);
+}
+
+.vedic-glow {
+  position: relative;
+}
+
+.vedic-glow::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(255, 153, 51, 0.2) 0%, transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.vedic-glow:hover::before {
+  opacity: 1;
+}
+
+/* Breathing animation */
+@keyframes breatheIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.breathing-animation {
+  animation: breatheIn 4s ease-in-out infinite;
+}
+
+/* Dark mode adjustments */
+.dark .vedic-title {
+  color: rgb(var(--turmeric));
+}
+
+.dark .vedic-settings {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(var(--turmeric), 0.2);
+}
+
+.dark .vedic-select {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(var(--turmeric), 0.3);
+}
+
+.dark .vedic-select:focus {
+  border-color: rgba(var(--turmeric), 0.8);
+  box-shadow: 0 0 0 2px rgba(var(--turmeric), 0.2);
+}
+
+.dark .vedic-slider {
+  background: rgba(var(--turmeric), 0.2);
+}
+
+.dark .vedic-slider::-webkit-slider-thumb {
+  background: rgb(var(--turmeric));
+}
+
+.dark .vedic-slider::-webkit-slider-thumb:hover {
+  background: rgb(var(--gold));
+}
+
+.dark .vedic-slider::-moz-range-thumb {
+  background: rgb(var(--turmeric));
+}
+
+.dark .vedic-slider::-moz-range-thumb:hover {
+  background: rgb(var(--gold));
+} 
